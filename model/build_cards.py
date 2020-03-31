@@ -55,7 +55,7 @@ if __name__ == "__main__":
             outfile.write("add process p p > w-{0} w-{0} j j QCD=0 SMHLOOP=0 NP=1  , w- > l- vl~ @ 2\n")
             outfile.write("output "+process)
         os.system("curl http://stash.osgconnect.net/+jiexiao/run_card.dat -o "+process+'/'+process+'_run_card.dat')
-        os.system("cp restrictcard"+'/'+'restrict_'+ params[ipar][1] + '_massless.dat' '.' '')
+        os.system("cp restrictcard"+'/'+'restrict_'+ params[ipar][1] + '_massless.dat'+' '+'./'+ process+ '/'+ process +'_restrict'+'_massless.dat')
 
         # bsm
         process='VBS_SSWW_'+ params[ipar][1]+'_TL'
@@ -70,6 +70,7 @@ if __name__ == "__main__":
             outfile.write("add process p p > w-{T} w-{0}  j j QCD=0 SMHLOOP=0 NP=1 , w- > l- vl~  @ 2\n")
             outfile.write("output "+process)
         os.system("curl http://stash.osgconnect.net/+jiexiao/run_card.dat -o "+process+'/'+process+'_run_card.dat')
+        os.system("cp restrictcard"+'/'+'restrict_'+ params[ipar][1] + '_massless.dat'+' '+'./'+ process+ '/'+ process +'_restrict'+'_massless.dat')
 
         #TT
         process='VBS_SSWW_'+ params[ipar][1]+'_TT'
@@ -83,6 +84,8 @@ if __name__ == "__main__":
             outfile.write("generate p p > w+{T} w+{T} j j QCD=0 SMHLOOP=0 NP=1 , w+ > l+ vl  @ 1\n")
             outfile.write(" add process p p > w-{T} w-{T}  j j QCD=0 SMHLOOP=0 NP=1 , w- > l- vl~@ 2\n")
             outfile.write("output "+process)
+        os.system("curl http://stash.osgconnect.net/+jiexiao/run_card.dat -o "+process+'/'+process+'_run_card.dat')
+        os.system("cp restrictcard"+'/'+'restrict_'+ params[ipar][1] + '_massless.dat'+' '+'./'+ process+ '/'+ process +'_restrict'+'_massless.dat')
 
         # 2D cards
 '''

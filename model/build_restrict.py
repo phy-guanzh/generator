@@ -110,7 +110,7 @@ if __name__ == "__main__":
     contents_after = f_after.read ()
     f_after.close ()
     os.makedirs("restrictcard")
-    os.system("cd restrictcard")
+#    os.system("cd restrictcard")
     # loop over parameters to be restricted
     for ipar,param in enumerate(params):
         # get 1st operator for cross term
@@ -122,7 +122,7 @@ if __name__ == "__main__":
                 else:
                     outfile.write ('   ' + par[0] + ' 0 # ' + par[1] + '\n')
             outfile.write (contents_after)
-
+            os.system("mv"+' '+'restrict*.dat'+' '+"restrictcard")
 #2D restrict_card
 """
         for jpar in range(ipar+1,len(params)):
