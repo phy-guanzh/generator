@@ -29,20 +29,23 @@ if __name__ == "__main__":
         # 1D cards
         single_opt=params[ipar][1]
 
-        int_process=single_opt+"_int"
-        bsm_process=single_opt+"_bsm"
+        int_process=single_opt+"_TL"
+        bsm_process=single_opt+"_TT"
+        sm_process=single_opt+"LL"
 
         process_list.append(int_process)
         process_list.append(bsm_process)
+        process_list.append(sm_process)
         # 2D
+        '''
         for jpar in range(ipar+1,len(params)):
             d2_process=params[ipar][1] + '_' + params[jpar][1]
             process_list.append(d2_process)
-
+        '''
     process_log_pair={}
     process_list_idle=process_list
     process_list_failed=[]
-    log_list=glob.glob("log/*out*")
+    log_list=glob.glob("./*log")
     for ilog in log_list:
         for iprocess in process_list:
             if iprocess+'.out' in ilog:
